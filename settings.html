@@ -15,26 +15,34 @@
   <form onsubmit="event.preventDefault(); saveProfile();" class="w-full max-w-md glass p-6 rounded-xl space-y-4">
     <div>
       <label class="block text-sm text-gray-300 mb-1">Email</label>
-      <input id="email" type="email" class="w-full p-2 rounded bg-[#0f1e3d] text-white" />
+      <input id="email" type="email" required class="w-full p-2 rounded bg-[#0f1e3d] text-white" />
     </div>
     <div>
       <label class="block text-sm text-gray-300 mb-1">Gamer Name</label>
-      <input id="username" type="text" class="w-full p-2 rounded bg-[#0f1e3d] text-white" />
+      <input id="username" type="text" required pattern="^[a-zA-Z0-9_]{3,20}$" class="w-full p-2 rounded bg-[#0f1e3d] text-white" />
     </div>
     <button type="submit" class="btn-yellow w-full">Save</button>
   </form>
 
   <script>
     function saveProfile() {
-      localStorage.setItem("userEmail", document.getElementById("email").value);
-      localStorage.setItem("userName", document.getElementById("username").value);
-      alert("Saved! Go back to profile to see changes.");
+      const email = document.getElementById("email").value.trim();
+      const username = document.getElementById("username").value.trim();
+
+      if (!email.includes('@') || username.length < 3) {
+        alert("Please enter valid email and username.");
+        return;
+      }
+
+      localStorage.setItem("userEmail", email);
+      localStorage.setItem("userName", username);
+      alert("Profile updated!");
       window.location.href = "profile.html";
     }
 
     window.onload = function () {
-      document.getElementById("email").value = localStorage.getItem("userEmail") || "pro.gamer@fpshub.gg";
-      document.getElementById("username").value = localStorage.getItem("userName") || "BeastSlayer_47";
+      document.getElementById("email").value = localStorage.getItem("userEmail") || "gamer@ffarena.gg";
+      document.getElementById("username").value = localStorage.getItem("userName") || "LegendX";
     };
   </script>
 </body>
