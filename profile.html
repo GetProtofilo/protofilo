@@ -7,15 +7,24 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     :root { --yellow: #e6ee0d; }
-    body { background: linear-gradient(to bottom right, #0f1e3d, #0a162b); font-family: 'Orbitron', sans-serif; }
+    body {
+      background: linear-gradient(to bottom right, #0f1e3d, #0a162b);
+      font-family: 'Orbitron', sans-serif;
+    }
+    .glass {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(12px);
+    }
   </style>
 </head>
 <body class="text-white p-4 flex flex-col items-center min-h-screen">
+
   <header class="w-full flex justify-between items-center mb-6">
     <a href="index.html" class="text-yellow-400 text-lg">← Home</a>
     <h2 class="text-xl font-bold">Your Profile</h2>
     <span></span>
   </header>
+
   <div class="text-center">
     <img src="https://cdn.pixabay.com/photo/2020/04/16/22/49/avatar-5055739_1280.png" class="w-24 h-24 rounded-full border-4 border-yellow-400" />
     <h3 id="displayName" class="text-2xl font-bold mt-3">Loading...</h3>
@@ -23,6 +32,30 @@
     <p id="displayEmail" class="text-xs text-gray-500 mb-4">Loading...</p>
     <button onclick="window.location.href='settings.html'" class="mt-2 bg-yellow-400 text-black px-4 py-2 rounded-full font-bold">Edit Profile</button>
   </div>
+
+  <!-- 🔥 STATS SECTION -->
+  <div class="mt-8 w-full max-w-xl px-4">
+    <div class="glass p-6 rounded-xl">
+      <div class="flex justify-between items-center mb-4">
+        <span class="text-sm font-semibold text-yellow-300">🎯 Competitive Stats</span>
+        <select class="bg-[#172c4f] text-white text-xs px-2 py-1 rounded">
+          <option>OVERALL</option>
+          <option>SOLO</option>
+          <option>DUO</option>
+          <option>SQUAD</option>
+        </select>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-center text-sm">
+        <div><p class="text-gray-400">Matches</p><p class="text-xl font-bold">82</p></div>
+        <div><p class="text-gray-400">Wins</p><p class="text-xl font-bold">24</p></div>
+        <div><p class="text-gray-400">Kills</p><p class="text-xl font-bold">563</p></div>
+        <div><p class="text-gray-400">Headshots</p><p class="text-xl font-bold">211</p></div>
+        <div><p class="text-gray-400">K/D Ratio</p><p class="text-xl font-bold">3.9</p></div>
+        <div><p class="text-gray-400">Accuracy</p><p class="text-xl font-bold">42%</p></div>
+      </div>
+    </div>
+  </div>
+
   <script>
     window.onload = function () {
       const email = localStorage.getItem("userEmail") || "pro.gamer@fpshub.gg";
