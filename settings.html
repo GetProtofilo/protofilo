@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Profile</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+<style>
+  :root {
+    --blue: #0f1e3d;
+    --yellow: #e6ee0d;
+  }
+  body {
+    background: linear-gradient(145deg, #0a182f, var(--blue));
+  }
+  .glass {
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .glow {
+    box-shadow: 0 0 12px var(--yellow);
+  }
+</style>
+
+</head>
+<body class="text-white font-sans flex flex-col items-center min-h-screen">
+  <div class="w-full flex justify-between items-center px-5 py-4 bg-[#0c1529] border-b border-[#1c2b4a]">
+    <a href="profile.html" class="text-white text-xl font-bold">←</a>
+    <h1 class="text-yellow-400 font-bold text-lg">Edit Profile</h1>
+    <span></span>
+  </div>
+  <form class="mt-8 w-11/12 max-w-md p-6 rounded-xl glass space-y-4">
+    <div>
+      <label class="text-sm text-gray-300">Registered Email</label>
+      <input type="email" value="ffhx007507@gmail.com" class="w-full mt-1 p-2 rounded bg-[#1a2a47] text-white border-none" />
+    </div>
+    <div>
+      <label class="text-sm text-gray-300">Password</label>
+      <input type="password" value="password123" class="w-full mt-1 p-2 rounded bg-[#1a2a47] text-white border-none" />
+    </div>
+    <div>
+      <label class="text-sm text-gray-300">Gamer Name</label>
+      <input type="text" value="adi12311" class="w-full mt-1 p-2 rounded bg-[#1a2a47] text-white border-none" />
+    </div>
+    <button class="w-full mt-4 bg-yellow-400 text-black font-bold py-2 px-6 rounded-full hover:bg-yellow-300">Save</button>
+  </form>
+</body>
+</html>
