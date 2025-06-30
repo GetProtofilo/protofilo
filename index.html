@@ -1,29 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tournament App</title>
+  <title>FF Tournament</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    :root { --blue: #0f1e3d; --yellow: #e6ee0d; }
-    body { background: radial-gradient(circle at top, #0f1e3d, #0a162b); font-family: 'Orbitron', sans-serif; }
-    .glow { box-shadow: 0 0 12px var(--yellow), 0 0 6px var(--yellow); }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="text-white flex flex-col min-h-screen items-center p-6">
-  <header class="w-full flex justify-between items-center mb-10">
-    <h1 class="text-2xl font-bold text-yellow-400">🎮 FF Tournament App</h1>
+<body class="flex flex-col items-center p-6 min-h-screen">
+  <header class="w-full flex justify-between items-center mb-10 px-4 py-4 border-b border-yellow-400">
+    <h1 class="text-2xl font-bold text-yellow-400">🔥 FF Tournament</h1>
     <img src="https://cdn.pixabay.com/photo/2020/04/16/22/49/avatar-5055739_1280.png" id="avatar" class="w-10 h-10 rounded-full border-2 border-yellow-400 cursor-pointer glow" />
   </header>
   <main class="text-center mt-10">
     <h2 class="text-3xl font-bold text-yellow-300 mb-4">Welcome, Warrior!</h2>
-    <p class="text-gray-300">Get ready to dominate the leaderboard. Tap the avatar to view your profile.</p>
+    <p class="text-gray-300">Tap the avatar to open your profile and start slaying 🔥</p>
   </main>
   <script>
-    document.getElementById('avatar').addEventListener('click', () => {
-      window.location.href = 'profile.html';
-    });
+    document.getElementById('avatar').onclick = () => window.location.href = 'profile.html';
   </script>
 </body>
 </html>
