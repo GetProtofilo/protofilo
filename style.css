@@ -1,11 +1,11 @@
 :root {
   --blue: #0f1e3d;
   --yellow: #e6ee0d;
-  --glow: 0 0 12px var(--yellow), 0 0 6px var(--yellow);
+  --glow: 0 0 16px var(--yellow), 0 0 8px var(--yellow);
 }
 
 body {
-  background: radial-gradient(circle at top, var(--blue), #0a162b);
+  background: radial-gradient(circle at top, var(--blue), #050b1a);
   font-family: 'Orbitron', sans-serif;
   color: white;
   margin: 0;
@@ -43,4 +43,11 @@ header, .glass {
 
 .stat-box p {
   margin: 0.2rem 0;
+}
+
+img.avatar {
+  border: 4px solid var(--yellow);
+  border-radius: 9999px;
+  width: 96px;
+  height: 96px;
 }
