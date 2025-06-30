@@ -1,0 +1,46 @@
+:root {
+  --blue: #0f1e3d;
+  --yellow: #e6ee0d;
+  --glow: 0 0 12px var(--yellow), 0 0 6px var(--yellow);
+}
+
+body {
+  background: radial-gradient(circle at top, var(--blue), #0a162b);
+  font-family: 'Orbitron', sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.glow {
+  box-shadow: var(--glow);
+}
+
+header, .glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+}
+
+.btn-yellow {
+  background-color: var(--yellow);
+  color: black;
+  font-weight: bold;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+}
+
+.btn-yellow:hover {
+  background-color: #dada0c;
+}
+
+.stat-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1rem;
+  text-align: center;
+}
+
+.stat-box p {
+  margin: 0.2rem 0;
+}
