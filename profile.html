@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profile</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { --yellow: #e6ee0d; }
+    body { background: linear-gradient(to bottom right, #0f1e3d, #0a162b); font-family: 'Orbitron', sans-serif; }
+  </style>
+</head>
+<body class="text-white p-4 flex flex-col items-center min-h-screen">
+  <header class="w-full flex justify-between items-center mb-6">
+    <a href="index.html" class="text-yellow-400 text-lg">← Home</a>
+    <h2 class="text-xl font-bold">Your Profile</h2>
+    <span></span>
+  </header>
+  <div class="text-center">
+    <img src="https://cdn.pixabay.com/photo/2020/04/16/22/49/avatar-5055739_1280.png" class="w-24 h-24 rounded-full border-4 border-yellow-400" />
+    <h3 id="displayName" class="text-2xl font-bold mt-3">Loading...</h3>
+    <p class="text-sm text-gray-400">ID: 918247</p>
+    <p id="displayEmail" class="text-xs text-gray-500 mb-4">Loading...</p>
+    <button onclick="window.location.href='settings.html'" class="mt-2 bg-yellow-400 text-black px-4 py-2 rounded-full font-bold">Edit Profile</button>
+  </div>
+  <script>
+    window.onload = function () {
+      const email = localStorage.getItem("userEmail") || "pro.gamer@fpshub.gg";
+      const name = localStorage.getItem("userName") || "BeastSlayer_47";
+      document.getElementById("displayEmail").textContent = email;
+      document.getElementById("displayName").textContent = name;
+    };
+  </script>
+</body>
+</html>
